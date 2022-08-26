@@ -269,3 +269,146 @@ for i in range(p12_row):
 
     print()
 
+print()
+# Pattern 13
+# 13.      *
+#         * *
+#        *   *
+#       *     *
+#      *********
+
+# Algorithm to print this pattern -- print spaces unless the index is (no. of columns)/2 +- counter.
+# At the +- 1 counter positions, an '*' is printed. The counter increments by 1 at each interation of the for loop.
+
+#print(int(9/2))
+p13_col = 9
+p13_row = 5
+p13_counter = 0
+
+for i in range(p13_row):
+    if i == (p13_row-1):
+        print(f'{"*"*p13_col}', end='')
+        break
+
+    for j in range(p13_col):
+        if j == (int(p13_col/2)-p13_counter) or j == (int(p13_col/2)+p13_counter):
+            print('*', end='')
+
+        else:
+            print(' ', end='')
+    p13_counter += 1
+
+    print()
+
+print()
+
+# Patter 14
+# 14.  *********
+#       *     *
+#        *   *
+#         * *
+#          *
+
+# This pattern is the previous one in reverse.
+
+p14_col = 9
+p14_row = 5
+p14_counter = 3
+middle = int(p14_col/2)
+#print(middle)
+
+for i in range(p14_row):
+    if i == 0:
+        print(f'{"*"*p14_col}', end='')
+        print()
+        continue
+
+    for j in range(p14_col):
+        if j == (middle-p14_counter) or j == (middle+p14_counter):
+            print('*', end='')
+
+        else:
+            print(' ', end='')
+    p14_counter -= 1
+
+    print()
+
+print()
+
+# Pattern 15
+# 15.      *
+#         * *
+#        *   *
+#       *     *
+#      *       *
+#       *     *
+#        *   *
+#         * *
+#          *
+
+p15_col = 9 
+p15_row = 9
+p15_counter = 0
+middle = int(p15_col/2)
+
+for i in range(p15_row):
+    for j in range(p15_col):
+        if j == (middle-p15_counter) or j == (middle+p15_counter):
+            print('*', end='')
+
+        else:
+            print(' ', end='')
+
+    if i < middle:
+        p15_counter += 1
+
+    else:
+        p15_counter -= 1
+
+    print()
+
+
+print()
+# Pattern 16
+# 16.           1
+#             1   1
+#           1   2   1
+#         1   3   3   1
+#       1   4   6   4   1
+
+# This is the Pascal's triangle. Algorithm for getting the numbers:
+# Find the number of rows you want to plot in the triangle.
+# Number of columns in each row goes up by 1 each time.
+# Pascal's rule: (n, k) = (n-1, k-1) + (n-1, k)
+# Where n is the row index and k is the column index.
+
+
+# Pattern 28
+# 28.      *
+#         * *
+#        * * *
+#       * * * *
+#      * * * * *
+#       * * * *
+#        * * *
+#         * *
+#          *
+
+p28_col = 9
+p28_row = 9
+p28_middle = int(9/2)
+p28_counter = 1
+
+for i in range(p28_row):
+    print(f'{(p28_middle-p28_counter+1)*" "}{p28_counter*"* "}', end='')
+
+    if i < p28_middle:
+        p28_counter += 1
+
+    else:
+        p28_counter -= 1
+
+    print()
+
+print()
+
